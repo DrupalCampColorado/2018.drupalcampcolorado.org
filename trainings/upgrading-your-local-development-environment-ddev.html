@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:dc="http://purl.org/dc/terms/" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:product="http://ogp.me/ns/product#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#">
+  
+<!-- Mirrored from 2018.drupalcampcolorado.org/trainings/upgrading-your-local-development-environment-ddev by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+      <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQPMKR5');</script>
+  <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<meta name="title" content="Upgrading your local development environment with DDEV | DrupalCamp Colorado 2018" />
+<link rel="canonical" href="upgrading-your-local-development-environment-ddev.html" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Upgrading your local development environment with DDEV | DrupalCamp Colorado 2018</title>
+    <link rel="stylesheet" href="../sites/default/files/css/css_1LZA4ulOR54H2KKOy9COWQpIvZ4Cnd2TlVbWXgEKMv886db.css?pdtdr5" media="all" />
+<link rel="stylesheet" href="../sites/default/files/css/css_GIvwP9oItk5ao_lYNf5qBnGGf7P5kQlqnN7QNDOhdwo86db.css?pdtdr5" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <meta name="theme-color" content="#f8ac5c">
+  </head>
+  <body class="path-product">
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQPMKR5"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+        <div id="skip-to-content">
+      <a href="#main-content" class="skip-to-content-link">Skip to main content</a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="layout-container">
+
+  <header role="banner">
+      <div class="region region-header">
+    <div id="block-themekit-branding" class="block block-system block-system-branding-block">
+  
+    
+          <div class="site-name">
+      <a href="../index.html" title="Home" rel="home">DrupalCamp Colorado 2018</a>
+    </div>
+    </div>
+<nav role="navigation" aria-labelledby="block-useraccountmenu-menu" id="block-useraccountmenu" class="block block-menu navigation menu--account">
+            
+  <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../code-of-conduct.html" target="_self" data-drupal-link-system-path="node/91">Code of Conduct</a>
+              </li>
+                <li class="menu-item">
+        <a href="../user/login.html" data-drupal-link-system-path="user/login">Log in</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-themekit-main-menu-menu" id="block-themekit-main-menu" class="block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-themekit-main-menu-menu">Main navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../schedule.html" data-drupal-link-system-path="node/71">Schedule</a>
+              </li>
+                <li class="menu-item">
+        <a href="../sponsor.html" data-drupal-link-system-path="node/2">Sponsor</a>
+              </li>
+                <li class="menu-item">
+        <a href="../volunteer.html" data-drupal-link-system-path="node/3">Volunteer</a>
+              </li>
+                <li class="menu-item">
+        <a href="../trainings.html" data-drupal-link-system-path="node/27">Trainings</a>
+              </li>
+                <li class="menu-item">
+        <a href="../travel.html" target="_self" data-drupal-link-system-path="node/90">Travel</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+<div class="mobile-menu">
+  <div class="bar"></div>
+</div><div id="block-cart" class="block block-commerce-cart">
+  
+    
+      <div class="cart--cart-block">
+  <div class="cart-block--summary">
+    <a class="cart-block--link__expand" href="../cart.html">
+      <span class="cart-block--summary__icon"><img src="../modules/contrib/commerce/icons/000000/cart.png" alt="Shopping Cart"></span>
+      <span class="cart-block--summary__count">0 items</span>
+    </a>
+  </div>
+  </div>
+
+  </div>
+
+  </div>
+
+  </header>
+
+  
+  
+
+  
+
+    <div class="region region-highlighted">
+    
+
+  </div>
+
+
+  
+
+  <main id="main-content" role="main">
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-themekit-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+<div id="block-themekit-page-title">
+  <h1>
+            <div class="field field--name-title field--type-string field--label-hidden field__item">Upgrading your local development environment with DDEV</div>
+      </h1>
+</div>
+
+<article class="node--type-training node--view-mode-full">
+
+  <div class="node__content">
+    <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Looking to move your local development environment to a more modern solution? This workshop will introduce students to , a Docker-powered local development environment built on modern principles and designed to be flexible, customizable, and powerful.</p>
+
+<p>The workshop will include hands-on exercises for installing DDEV and its prerequisites on both Mac OS X and Windows 10 Pro, the basics of getting both new sites and existing sites up-and-running, as well as basic, day-to-day DDEV commands.</p>
+
+<p>The goal is for students to be proficient and confident in using DDEV in their day-to-day professional Drupal work at the conclusion of the workshop.</p>
+
+<p>Students will also be provided access to a 10-page handout and 12 screencasts demonstrating various DDEV functionality, created specifically for this workshop.</p>
+
+<p> </p>
+
+<h3>About The Trainer</h3>
+
+<p>Mike Anello (@ultimike) is co-founder and vice president of DrupalEasy, a Drupal training and consulting firm based in Central Florida. Mike has been one of the main organizers of the Florida Drupal Users' Group and Florida DrupalCamps for over nine years, is a member of the Drupal Community Working Group, and also helps manage the Drupal Association's Community Cultivation Grants program.</p>
+
+<p>Michael has been developing Drupal sites for over 12 years specializing in module development, theming, and general site-building with a strong focus on best practices and sustainable development. Michael is also the lead trainer and curriculum developer for DrupalEasy's intensive, 12-week Drupal Career Online (DCO) and 6-week "Mastering Drupal 8 Development Workflows with Pantheon" training programs.</p>
+
+<p>He can be heard interviewing fellow Drupal community members, talking about current Drupal news, and highlighting new and upcoming modules on the twice-monthly DrupalEasy Podcast. He is an Acquia Certified Developer and a Drupal 8 core contributor.</p></div>
+      
+    </div>
+
+    <aside class="sidebar">
+      <div class="date-time">
+        <div class="field__label">Date & Time</div>
+        <div class="date">
+            <div class="field field--name-field-date field--type-string field--label-hidden field__item">8/03/18</div>
+      </div>
+        <div class="time">
+            <div class="field field--name-field-time field--type-string field--label-hidden field__item">9:00AM - 3:00PM</div>
+      </div>
+
+      </div>
+      
+  <div class="field field--name-field-location field--type-string field--label-above">
+    <div class="field__label">Location</div>
+              <div class="field__item">King Center, Auraria Campus</div>
+          </div>
+
+      
+  <div class="field field--name-field-trainers field--type-entity-reference field--label-above">
+    <div class="field__label">Trainer(s)</div>
+          <div class="field__items">
+              <div class="field__item"><article class="profile">
+  
+            <div class="field field--name-field-profile-headshot field--type-image field--label-hidden field__item">  <a href="../community/ultimike.html"><img src="../sites/default/files/styles/user_profile_teaser/public/2018-05/mike_2013_square5932.jpg?itok=JlgcASwF" width="200" height="200" alt="Mike Anello (@ultimike)" class="image-style-user-profile-teaser" />
+
+</a>
+</div>
+      
+            <div class="field field--name-field-profile-name field--type-name field--label-hidden field__item"><a href="../community/ultimike.html">michael anello</a></div>
+      </article>
+</div>
+              </div>
+      </div>
+
+      
+      <div class="field field--name-variations field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><div>
+  <div class="field field--name-price field--type-commerce-price field--label-above">
+    <div class="field__label">Price</div>
+              <div class="field__item">$25.00</div>
+          </div>
+
+            <div class="field field--name-product-id field--type-entity-reference field--label-hidden field__item"><article>
+      <div class="field field--name-variations field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><form class="commerce-order-item-add-to-cart-form-commerce-product-7 commerce-order-item-add-to-cart-form" data-drupal-selector="commerce-order-item-add-to-cart-form-commerce-product-7" action="https://2018.drupalcampcolorado.org/trainings/upgrading-your-local-development-environment-ddev" method="post" id="commerce-order-item-add-to-cart-form-commerce-product-7" accept-charset="UTF-8">
+  <div class="field--type-entity-reference field--name-purchased-entity field--widget-commerce-product-variation-attributes js-form-wrapper form-wrapper" data-drupal-selector="edit-purchased-entity-wrapper" id="edit-purchased-entity-wrapper">      
+  </div>
+<input autocomplete="off" data-drupal-selector="form-am9uk3h-wa-wa4sorus1khhn-owuqykqrn6rhusxau0" type="hidden" name="form_build_id" value="form-Am9Uk3h_wA-wa4sOruS1KhhN-OWuQyKQRN6rHUsxAu0" />
+<input data-drupal-selector="edit-commerce-order-item-add-to-cart-form-commerce-product-7" type="hidden" name="form_id" value="commerce_order_item_add_to_cart_form_commerce_product_7" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Register Now" class="button button--primary js-form-submit form-submit" />
+</div>
+
+</form>
+</div>
+          </div>
+  </article>
+</div>
+      </div>
+</div>
+          </div>
+  
+    </aside>
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+    </div>
+    
+      </main>
+
+      <footer role="contentinfo">
+        <div class="region region-footer">
+    <div id="block-themekit-powered" role="complementary" class="block block-system block-system-powered-by-block">
+  
+    
+      <span>Powered by <a href="https://www.drupal.org/">Drupal</a></span>
+    <span>and </span><a href="https://www.amazee.io/">Amazee.io</a>
+</div><nav role="navigation" aria-labelledby="block-followus-menu" id="block-followus" class="block block-menu navigation menu--follow-us">
+      
+  <h2 id="block-followus-menu">Follow us</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://twitter.com/drupalcolorado" target="_blank">Twitter</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+    </footer>
+  
+</div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"product\/7","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"user":{"uid":0,"permissionsHash":"740b9170242bed0d7d946b107598b018296127a65649bc3924e9305e0c4e3b88"}}</script>
+<script src="../sites/default/files/js/js_g5mctHHLGgJ0hzXkb_KJny9smY0OkKHhy-bH6vOM96Y.js"></script>
+
+  </body>
+
+<!-- Mirrored from 2018.drupalcampcolorado.org/trainings/upgrading-your-local-development-environment-ddev by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:56 GMT -->
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:dc="http://purl.org/dc/terms/" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:product="http://ogp.me/ns/product#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#">
+  
+<!-- Mirrored from 2018.drupalcampcolorado.org/sessions/drupal-8-configuration-system-basics by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+      <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQPMKR5');</script>
+  <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<meta name="title" content="Drupal 8 Configuration System Basics | DrupalCamp Colorado 2018" />
+<link rel="canonical" href="drupal-8-configuration-system-basics.html" />
+<meta name="description" content="The Drupal 8 configuration system can provide great advantages to managing the configuration of a site, but it can also cause massive headaches if used improperly. This presentation will provide an overview of how the Drupal 8 configuration system works, best practices on basic workflows to utilize it effectively, and a small sampling of some of the contributed modules available to enhance it.
+
+This presentation is designed for Drupal site-builders, developers, and project managers interested in learning basic best practices of the Drupal 8 configuration system. 
+ " />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="drupal-8-configuration-system-basics.html" />
+
+    <title>Drupal 8 Configuration System Basics | DrupalCamp Colorado 2018</title>
+    <link rel="stylesheet" href="../sites/default/files/css/css_1LZA4ulOR54H2KKOy9COWQpIvZ4Cnd2TlVbWXgEKMv886db.css?pdtdr5" media="all" />
+<link rel="stylesheet" href="../sites/default/files/css/css_5SMOOwQ63F0QPtlazxG52MioLbFfL_5OXzSm0tV4vTQ86db.css?pdtdr5" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <meta name="theme-color" content="#f8ac5c">
+  </head>
+  <body class="path-node page-node-type-session">
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQPMKR5"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+        <div id="skip-to-content">
+      <a href="#main-content" class="skip-to-content-link">Skip to main content</a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="layout-container">
+
+  <header role="banner">
+      <div class="region region-header">
+    <div id="block-themekit-branding" class="block block-system block-system-branding-block">
+  
+    
+          <div class="site-name">
+      <a href="../index.html" title="Home" rel="home">DrupalCamp Colorado 2018</a>
+    </div>
+    </div>
+<nav role="navigation" aria-labelledby="block-useraccountmenu-menu" id="block-useraccountmenu" class="block block-menu navigation menu--account">
+            
+  <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../code-of-conduct.html" target="_self" data-drupal-link-system-path="node/91">Code of Conduct</a>
+              </li>
+                <li class="menu-item">
+        <a href="../user/login.html" data-drupal-link-system-path="user/login">Log in</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-themekit-main-menu-menu" id="block-themekit-main-menu" class="block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-themekit-main-menu-menu">Main navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../schedule.html" data-drupal-link-system-path="node/71">Schedule</a>
+              </li>
+                <li class="menu-item">
+        <a href="../sponsor.html" data-drupal-link-system-path="node/2">Sponsor</a>
+              </li>
+                <li class="menu-item">
+        <a href="../volunteer.html" data-drupal-link-system-path="node/3">Volunteer</a>
+              </li>
+                <li class="menu-item">
+        <a href="../trainings.html" data-drupal-link-system-path="node/27">Trainings</a>
+              </li>
+                <li class="menu-item">
+        <a href="../travel.html" target="_self" data-drupal-link-system-path="node/90">Travel</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+<div class="mobile-menu">
+  <div class="bar"></div>
+</div><div id="block-cart" class="block block-commerce-cart">
+  
+    
+      <div class="cart--cart-block">
+  <div class="cart-block--summary">
+    <a class="cart-block--link__expand" href="../cart.html">
+      <span class="cart-block--summary__icon"><img src="../modules/contrib/commerce/icons/000000/cart.png" alt="Shopping Cart"></span>
+      <span class="cart-block--summary__count">0 items</span>
+    </a>
+  </div>
+  </div>
+
+  </div>
+
+  </div>
+
+  </header>
+
+  
+  
+
+  
+
+    <div class="region region-highlighted">
+    
+
+  </div>
+
+
+  
+
+  <main id="main-content" role="main">
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-themekit-page-title">
+  
+      <span class="date"></span>
+    <h1><span class="field field--name-title field--type-string field--label-hidden">Drupal 8 Configuration System Basics</span>
+</h1>
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Drupal 8 Configuration System Basics</span>
+</h1>
+
+
+  </div>
+<div id="block-themekit-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+<article role="article" class="node node--type-session node--view-mode-full">
+
+  <div class="node__content">
+    <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>The Drupal 8 configuration system can provide great advantages to managing the configuration of a site, but it can also cause massive headaches if used improperly. This presentation will provide an overview of how the Drupal 8 configuration system works, best practices on basic workflows to utilize it effectively, and a small sampling of some of the contributed modules available to enhance it.</p>
+
+<p>This presentation is designed for Drupal site-builders, developers, and project managers interested in learning basic best practices of the Drupal 8 configuration system. 
+ </p></div>
+      
+    </div>
+
+    <aside class="sidebar">
+      
+  <div class="field field--name-field-session-speakers field--type-entity-reference field--label-above">
+    <div class="field__label">Speaker(s)</div>
+          <div class="field__items">
+              <span  class="field field--name-field-session-speakers field--type-entity-reference field--label-above field__item"><a href="../community/ultimike.html" hreflang="en">ultimike</a></span>
+              </div>
+      </div>
+
+      
+  <div class="field field--name-field-session-track field--type-entity-reference field--label-above">
+    <div class="field__label">Track</div>
+              <div class="field__item">Site Building</div>
+          </div>
+
+      
+  <div class="field field--name-field-session-level field--type-entity-reference field--label-above">
+    <div class="field__label">Level</div>
+              <div class="field__item">Beginner</div>
+          </div>
+
+      
+  <div class="field field--name-field-session-room field--type-entity-reference field--label-above">
+    <div class="field__label">Room</div>
+              <div class="field__item">Recital Hall</div>
+          </div>
+
+    </aside>
+  </div>
+
+</article>
+
+
+  </div>
+
+  </div>
+
+    </div>
+    
+      </main>
+
+      <footer role="contentinfo">
+        <div class="region region-footer">
+    <div id="block-themekit-powered" role="complementary" class="block block-system block-system-powered-by-block">
+  
+    
+      <span>Powered by <a href="https://www.drupal.org/">Drupal</a></span>
+    <span>and </span><a href="https://www.amazee.io/">Amazee.io</a>
+</div><nav role="navigation" aria-labelledby="block-followus-menu" id="block-followus" class="block block-menu navigation menu--follow-us">
+      
+  <h2 id="block-followus-menu">Follow us</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://twitter.com/drupalcolorado" target="_blank">Twitter</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+    </footer>
+  
+</div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/26","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"740b9170242bed0d7d946b107598b018296127a65649bc3924e9305e0c4e3b88"}}</script>
+<script src="../sites/default/files/js/js_g5mctHHLGgJ0hzXkb_KJny9smY0OkKHhy-bH6vOM96Y.js"></script>
+
+  </body>
+
+<!-- Mirrored from 2018.drupalcampcolorado.org/sessions/drupal-8-configuration-system-basics by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:39 GMT -->
+</html>

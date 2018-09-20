@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:dc="http://purl.org/dc/terms/" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:product="http://ogp.me/ns/product#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#">
+  
+<!-- Mirrored from 2018.drupalcampcolorado.org/sessions/building-automated-door-lock-system-drupal-8 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+      <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQPMKR5');</script>
+  <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<meta name="title" content="Building an Automated Door Lock System with Drupal 8 | DrupalCamp Colorado 2018" />
+<link rel="canonical" href="building-automated-door-lock-system-drupal-8.html" />
+<meta name="description" content="If you&#039;ve been in web development for any length of time, a relative, friend or stranger has had an idea for you. This typically involves listening to a lengthy plan of how their idea will make them rich while you try to pretend that you care.
+
+Finally, a friend of mine had a good idea. He had just purchased a Bed &amp; Breakfast with an automated door lock system. He wanted to create a method to automatically send a guest their door keycode on the check-in date. My wheels started spinning, can I build this in Drupal? Yes!
+
+Key Components:" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="building-automated-door-lock-system-drupal-8.html" />
+
+    <title>Building an Automated Door Lock System with Drupal 8 | DrupalCamp Colorado 2018</title>
+    <link rel="stylesheet" href="../sites/default/files/css/css_1LZA4ulOR54H2KKOy9COWQpIvZ4Cnd2TlVbWXgEKMv886db.css?pdtdr5" media="all" />
+<link rel="stylesheet" href="../sites/default/files/css/css_5SMOOwQ63F0QPtlazxG52MioLbFfL_5OXzSm0tV4vTQ86db.css?pdtdr5" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+    <meta name="theme-color" content="#f8ac5c">
+  </head>
+  <body class="path-node page-node-type-session">
+      <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQPMKR5"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+        <div id="skip-to-content">
+      <a href="#main-content" class="skip-to-content-link">Skip to main content</a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="layout-container">
+
+  <header role="banner">
+      <div class="region region-header">
+    <div id="block-themekit-branding" class="block block-system block-system-branding-block">
+  
+    
+          <div class="site-name">
+      <a href="../index.html" title="Home" rel="home">DrupalCamp Colorado 2018</a>
+    </div>
+    </div>
+<nav role="navigation" aria-labelledby="block-useraccountmenu-menu" id="block-useraccountmenu" class="block block-menu navigation menu--account">
+            
+  <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../code-of-conduct.html" target="_self" data-drupal-link-system-path="node/91">Code of Conduct</a>
+              </li>
+                <li class="menu-item">
+        <a href="../user/login.html" data-drupal-link-system-path="user/login">Log in</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-themekit-main-menu-menu" id="block-themekit-main-menu" class="block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-themekit-main-menu-menu">Main navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../schedule.html" data-drupal-link-system-path="node/71">Schedule</a>
+              </li>
+                <li class="menu-item">
+        <a href="../sponsor.html" data-drupal-link-system-path="node/2">Sponsor</a>
+              </li>
+                <li class="menu-item">
+        <a href="../volunteer.html" data-drupal-link-system-path="node/3">Volunteer</a>
+              </li>
+                <li class="menu-item">
+        <a href="../trainings.html" data-drupal-link-system-path="node/27">Trainings</a>
+              </li>
+                <li class="menu-item">
+        <a href="../travel.html" target="_self" data-drupal-link-system-path="node/90">Travel</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+<div class="mobile-menu">
+  <div class="bar"></div>
+</div><div id="block-cart" class="block block-commerce-cart">
+  
+    
+      <div class="cart--cart-block">
+  <div class="cart-block--summary">
+    <a class="cart-block--link__expand" href="../cart.html">
+      <span class="cart-block--summary__icon"><img src="../modules/contrib/commerce/icons/000000/cart.png" alt="Shopping Cart"></span>
+      <span class="cart-block--summary__count">0 items</span>
+    </a>
+  </div>
+  </div>
+
+  </div>
+
+  </div>
+
+  </header>
+
+  
+  
+
+  
+
+    <div class="region region-highlighted">
+    
+
+  </div>
+
+
+  
+
+  <main id="main-content" role="main">
+    <div class="layout-content">
+        <div class="region region-content">
+    <div id="block-themekit-page-title">
+  
+      <span class="date"></span>
+    <h1><span class="field field--name-title field--type-string field--label-hidden">Building an Automated Door Lock System with Drupal 8</span>
+</h1>
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Building an Automated Door Lock System with Drupal 8</span>
+</h1>
+
+
+  </div>
+<div id="block-themekit-content" class="block block-system block-system-main-block">
+  
+    
+      
+
+
+
+<article role="article" class="node node--type-session node--view-mode-full">
+
+  <div class="node__content">
+    <div class="content">
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>If you've been in web development for any length of time, a relative, friend or stranger has had an idea for you. This typically involves listening to a lengthy plan of how their idea will make them rich while you try to pretend that you care.</p>
+
+<p>Finally, a friend of mine had a good idea. He had just purchased a Bed &amp; Breakfast with an automated door lock system. He wanted to create a method to automatically send a guest their door keycode on the check-in date. My wheels started spinning, can I build this in Drupal? Yes!</p>
+
+<p><strong>Key Components:</strong></p>
+
+<ul><li>Webhooks - Booking engine with webhook functionality. Anytime someone books a room or a booking is updated, this webhook is fired and pings a url in D8 that has been configured to consume the JSON data passed from the webhook.</li>
+	<li>Drupal’s Queue System - The JSON data from the webhook is added to Drupal's Queue system to be processed later as a booking entity containing the start date of their stay, contact information, etc.</li>
+	<li>CRON - Using Drupal's cron system, a check is made to see if any bookings are starting today. If there are, they are added to an Email queue and/or SMS queue to be sent out.</li>
+	<li><a href="https://www.twilio.com/">Twilio</a> - For SMS notifications</li>
+	<li><a href="https://sendgrid.com/">SendGrid</a> - For email notifications </li>
+	<li><a href="https://www.home-assistant.io/">Home Assistant</a> - Using the REST API from Home Assistant (open source home automation software running on a Raspberry PI) we'll be able to automatically remove and add new PIN codes.</li>
+</ul><p>Although a complex setup, this method provides you with the security of ensuring the right people have access to your house. By leveraging Drupal, I was amazed how easily this could be pulled of. With all the great functionality in core, the solution requires minimal custom code.</p>
+
+<p><strong>Some base understanding of Drupal 8 code and concepts will be helpful as we dive in and look at:</strong></p>
+
+<ul><li>Scalability - Using Drupal's Queue System to delay process intensive actions.</li>
+	<li>Security - Integration with the Key module for storing API keys.</li>
+	<li>Reliability - Integrating with third party services like SendGrid and Twilio for notifications.</li>
+	<li>Reusability - Leverage Drupal Services for code organization and reuse.</li>
+</ul><p>My hope is that you'll leave with a renewed appreciation of how flexible Drupal can be.</p></div>
+      
+    </div>
+
+    <aside class="sidebar">
+      
+  <div class="field field--name-field-session-speakers field--type-entity-reference field--label-above">
+    <div class="field__label">Speaker(s)</div>
+          <div class="field__items">
+              <span  class="field field--name-field-session-speakers field--type-entity-reference field--label-above field__item"><a href="../community/joelsteidl.html" hreflang="en">joelsteidl</a></span>
+              </div>
+      </div>
+
+      
+  <div class="field field--name-field-session-track field--type-entity-reference field--label-above">
+    <div class="field__label">Track</div>
+              <div class="field__item">Backend</div>
+          </div>
+
+      
+  <div class="field field--name-field-session-level field--type-entity-reference field--label-above">
+    <div class="field__label">Level</div>
+              <div class="field__item">Intermediate</div>
+          </div>
+
+      
+  <div class="field field--name-field-session-room field--type-entity-reference field--label-above">
+    <div class="field__label">Room</div>
+              <div class="field__item">Aten (Room 211)</div>
+          </div>
+
+    </aside>
+  </div>
+
+</article>
+
+
+  </div>
+
+  </div>
+
+    </div>
+    
+      </main>
+
+      <footer role="contentinfo">
+        <div class="region region-footer">
+    <div id="block-themekit-powered" role="complementary" class="block block-system block-system-powered-by-block">
+  
+    
+      <span>Powered by <a href="https://www.drupal.org/">Drupal</a></span>
+    <span>and </span><a href="https://www.amazee.io/">Amazee.io</a>
+</div><nav role="navigation" aria-labelledby="block-followus-menu" id="block-followus" class="block block-menu navigation menu--follow-us">
+      
+  <h2 id="block-followus-menu">Follow us</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://twitter.com/drupalcolorado" target="_blank">Twitter</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+    </footer>
+  
+</div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/56","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","user":{"uid":0,"permissionsHash":"740b9170242bed0d7d946b107598b018296127a65649bc3924e9305e0c4e3b88"}}</script>
+<script src="../sites/default/files/js/js_g5mctHHLGgJ0hzXkb_KJny9smY0OkKHhy-bH6vOM96Y.js"></script>
+
+  </body>
+
+<!-- Mirrored from 2018.drupalcampcolorado.org/sessions/building-automated-door-lock-system-drupal-8 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Sep 2018 16:55:49 GMT -->
+</html>
